@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationCell: View {
-    @State private var showPostImage = false
+    @State private var showPostImage = true
     
     var body: some View {
         HStack {
@@ -39,10 +39,15 @@ struct NotificationCell: View {
                     Text("Follow")
                         .padding(.horizontal, 20)
                         .padding(.vertical, 8)
+                        .background(Color(.systemBlue))
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .font(.system(size: 14, weight: .semibold))
                 }
 
             }
         }
+        .padding(.horizontal)
     }
 }
 
