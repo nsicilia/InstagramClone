@@ -78,7 +78,6 @@ struct UploadPostView: View {
                         .foregroundColor(.white)
                 }
                 .padding()
-
                 
             }
             
