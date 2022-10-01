@@ -12,6 +12,9 @@ struct RegistrationView: View {
     @State private var username = ""
     @State private var fullname = ""
     @State private var password = ""
+    @State private var selectedImage: UIImage?
+    @State private var image: Image?
+    @State var imagePickerPresented = false
     
     @Environment(\.presentationMode) var mode
     
@@ -22,30 +25,45 @@ struct RegistrationView: View {
             
             VStack{
                 //Logo
-                //Pick a photo button
-                Button {
-                    //todo
+                if let image = image{
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 110, height: 110)
+                        .clipShape(Circle())
+                        .padding()
                     
-                } label: {
-                    VStack{
-                        Image("GenericPhotoIcon")
-                            .resizable()
-                            .renderingMode(.template)
-                            .scaledToFill()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.white)
+                }else{
+                    //Pick a photo button
+                    Button {
+                        imagePickerPresented.toggle()
                         
-                        Text("Upload an image!")
-                            .foregroundColor(.white)
+                    } label: {
+                        VStack{
+                            Image("GenericPhotoIcon")
+                                .resizable()
+                                .renderingMode(.template)
+                                .scaledToFill()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.white)
                             
+                            Text("Upload an image!")
+                                .foregroundColor(.white)
+                                
+                        }
+                        .foregroundColor(.black)
+                        .padding(.vertical, 32)
+                        .padding(.horizontal)
                     }
-                    .foregroundColor(.black)
-                    .padding(.vertical, 32)
-                    .padding(.horizontal)
+                    .background(Color(.init(white: 1, alpha: 0.15)))
+                    .cornerRadius(10)
+                    //The image selection pop-up, runs the loadImage function when the sheet is dismissed
+                    .sheet(isPresented: $imagePickerPresented, onDismiss: loadImage, content: {
+                        //Selects an image from the UIKit image picker, sets that photo to selectedImage var
+                        ImagePicker(image: $selectedImage)
+                    })
+                    .padding()
                 }
-                .background(Color(.init(white: 1, alpha: 0.15)))
-                .cornerRadius(10)
-                .padding()
                 
                 VStack(spacing: 20){
                     //email field
@@ -99,6 +117,15 @@ struct RegistrationView: View {
                 
             }
         }
+    }
+}
+
+
+extension RegistrationView{
+    func loadImage(){
+        //if the selectedImage is set we set it to the postImage(the UIKit to swiftui image conversion)
+        guard let selectedImage = selectedImage else {return }
+        image = Image(uiImage: selectedImage)
     }
 }
 
