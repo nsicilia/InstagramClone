@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         Text("Hello world")
     }
