@@ -17,7 +17,7 @@ struct CustomSecureField: View {
                 placeholder
                     .foregroundColor(Color(.init(white: 1, alpha: 0.8)))
                     .padding(.leading, 40)
-                
+            }
                 HStack{
                     Image(systemName: "lock")
                         .resizable()
@@ -27,7 +27,7 @@ struct CustomSecureField: View {
                     
                     SecureField("", text: $text)
                 }
-            }
+            
         }
         .padding()
         .background(Color(.init(white: 1, alpha: 0.15)))

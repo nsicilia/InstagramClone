@@ -77,13 +77,13 @@ struct RegistrationView: View {
                     CustomTextField(text: $fullname, placeholder: Text("Full Name..."), imageName: "person")
 
                     //password field
-                    CustomSecureField(text: $email, placeholder: Text("Password..."))
+                    CustomSecureField(text: $password, placeholder: Text("Password..."))
                     
                     //sign up
                     
                     Button {
                         //todo
-                        viewModel.register()
+                        viewModel.register(withEmail: email, password: password)
                         
                     } label: {
                         Text("Sign Up")

@@ -18,7 +18,7 @@ struct CustomTextField: View {
                 placeholder
                     .foregroundColor(Color(.init(white: 1, alpha: 0.8)))
                     .padding(.leading, 40)
-                
+            }
                 HStack{
                     Image(systemName: imageName)
                         .resizable()
@@ -28,7 +28,7 @@ struct CustomTextField: View {
                     
                     TextField("", text: $text)
                 }
-            }
+            
         }
         .padding()
         .background(Color(.init(white: 1, alpha: 0.15)))
