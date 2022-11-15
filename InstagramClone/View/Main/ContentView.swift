@@ -12,7 +12,6 @@ struct ContentView: View {
     
     var body: some View {
 
-       // MainTabView()
         
         Group{
             if viewModel.userSession == nil{
@@ -25,10 +24,10 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack{
-            ContentView()
-        }
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ZStack{
+//            ContentView()
+//        }
+//    }
+//}

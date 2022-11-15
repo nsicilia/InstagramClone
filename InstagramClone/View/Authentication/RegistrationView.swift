@@ -83,7 +83,7 @@ struct RegistrationView: View {
                     
                     Button {
                         //todo
-                        viewModel.register(withEmail: email, password: password)
+                        viewModel.register(withEmail: email, password: password, image: selectedImage, fullname: fullname, username: username.lowercased())
                         
                     } label: {
                         Text("Sign Up")
