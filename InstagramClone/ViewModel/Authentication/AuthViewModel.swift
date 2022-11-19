@@ -17,6 +17,7 @@ class AuthViewModel: ObservableObject {
     
     init(){
         userSession = Auth.auth().currentUser
+        fetchUser()
     }
     
     func login(withEmail email: String, password: String){
@@ -55,7 +56,7 @@ class AuthViewModel: ObservableObject {
                             "uid": user.uid]
                 
                 //Upload
-                Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
+                COLLECTION_USERS.document(user.uid).setData(data) { _ in
                     print("DEBUG:Succsessfully uploaded user data")
                     self.userSession = user
                 }
@@ -75,6 +76,20 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser(){
+        
+        guard let uid = userSession?.uid else { return }
+        
+        COLLECTION_USERS.document(uid).getDocument { snapshot, error in
+            
+            if let error = error {
+                print("ERROR: from func fetchUser - \(error.localizedDescription)")
+                return
+            }
+            
+            let user = try? snapshot?.data(as: User.self)
+            
+            
+        }
         
     }
     
