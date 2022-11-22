@@ -30,16 +30,19 @@ class SearchViewModel: ObservableObject{
             }
             
             guard let documents = snapshot?.documents else { return }
-            
 //            documents.forEach { QueryDocumentSnapshot in
 //                guard let user = try? QueryDocumentSnapshot.data(as: User.self) else { return }
 //                self.users.append(user)
 //            }
-            
             self.users = documents.compactMap { try? $0.data(as: User.self) }
-            
-            print(self.users)
+
         }
         
+    }
+    
+    func filteredUsers(_ query: String) -> [User] {
+        let lowercasedQuery = query.lowercased()
+        
+        return users.filter({ $0.fullname.lowercased().contains(lowercasedQuery) || $0.username.lowercased().contains(lowercasedQuery) })
     }
 }
