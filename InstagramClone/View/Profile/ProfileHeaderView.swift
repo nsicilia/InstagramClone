@@ -9,14 +9,14 @@ import SwiftUI
 import Kingfisher
 
 struct ProfileHeaderView: View {
-    let user: User
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack(alignment: .leading){
             
             //Image
             HStack {
-                KFImage(URL(string: user.profileImageURL))
+                KFImage(URL(string: viewModel.user.profileImageURL))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
@@ -34,7 +34,7 @@ struct ProfileHeaderView: View {
                 .padding(.trailing, 16)
             }
             //name
-            Text(user.fullname)
+            Text(viewModel.user.fullname)
                 .font(.system(size: 15, weight: .semibold))
                 .padding([.leading,.top])
             
@@ -49,7 +49,7 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 //Buttons
-                ProfileActionButtonView(isCurrentUser: user.isCurrentUser)
+                ProfileActionButtonView(viewModel: viewModel)
                 
                 Spacer()
             }
@@ -63,6 +63,6 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(user: User(username: "name", email: "email@email.com", profileImageURL: "https://firebasestorage.googleapis.com:443/v0/b/instagramclone-256b6.appspot.com/o/profile_images%2F16B6A869-E2CE-4138-8D1C-7D8DA9C9A5E2?alt=media&token=5cf97352-08b8-4698-b71d-31b390a52b52", fullname: "Jane Doeinton"))
+        ProfileHeaderView(viewModel: ProfileViewModel(user: User(username: "name", email: "email@email.com", profileImageURL: "https://firebasestorage.googleapis.com:443/v0/b/instagramclone-256b6.appspot.com/o/profile_images%2F16B6A869-E2CE-4138-8D1C-7D8DA9C9A5E2?alt=media&token=5cf97352-08b8-4698-b71d-31b390a52b52", fullname: "Jane Doeinton")))
     }
 }

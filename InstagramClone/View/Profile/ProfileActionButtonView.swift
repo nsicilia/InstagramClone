@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ProfileActionButtonView: View {
-    var isCurrentUser:Bool
-    var isFollowed = false
+    @ObservedObject var viewModel: ProfileViewModel
+    var isFollowed:Bool {return viewModel.user.isFollowed ?? false }
     
     var body: some View {
         
-        if isCurrentUser {
+        if viewModel.user.isCurrentUser {
             //user profile edit button
             Button {
                 //todo
@@ -33,7 +33,7 @@ struct ProfileActionButtonView: View {
             HStack{
                 //Follow button
                 Button {
-                    //todo
+                    isFollowed ? viewModel.unfollow() : viewModel.follow()
                 } label: {
                     Text(isFollowed ? "Following": "Follow")
                         .font(.system(size: 15, weight: .semibold))
@@ -69,6 +69,6 @@ struct ProfileActionButtonView: View {
 
 struct ProfileActionButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileActionButtonView(isCurrentUser: true)
+        ProfileActionButtonView(viewModel: ProfileViewModel(user: User(username: "name", email: "email@email.com", profileImageURL: "https://firebasestorage.googleapis.com:443/v0/b/instagramclone-256b6.appspot.com/o/profile_images%2F16B6A869-E2CE-4138-8D1C-7D8DA9C9A5E2?alt=media&token=5cf97352-08b8-4698-b71d-31b390a52b52", fullname: "Jane Doeinton")))
     }
 }

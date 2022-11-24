@@ -47,6 +47,8 @@
 		01DAE9A328DB6C4100F61034 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAE9A228DB6C4100F61034 /* ForgotPasswordView.swift */; };
 		01DAE9A528DB77A200F61034 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAE9A428DB77A200F61034 /* CustomTextField.swift */; };
 		01DAE9A728DB77B100F61034 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAE9A628DB77B100F61034 /* CustomSecureField.swift */; };
+		01E4255B292D858F00A9D0EA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4255A292D858E00A9D0EA /* ProfileViewModel.swift */; };
+		01E4255D292D941700A9D0EA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4255C292D941700A9D0EA /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		01DAE9A228DB6C4100F61034 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		01DAE9A428DB77A200F61034 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		01DAE9A628DB77B100F61034 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		01E4255A292D858E00A9D0EA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		01E4255C292D941700A9D0EA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				01473BFC291ED3C1004E0429 /* ImageUploader.swift */,
+				01E4255C292D941700A9D0EA /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 		01D2607428A08E510019004A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				01E4255A292D858E00A9D0EA /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				01DAE99D28DA341800F61034 /* ImagePicker.swift in Sources */,
 				0116A8E728C6AFEC0050780B /* ProfileHeaderView.swift in Sources */,
 				01D2607E28A090410019004A /* ProfileView.swift in Sources */,
+				01E4255D292D941700A9D0EA /* UserService.swift in Sources */,
 				014DF98528D29F6B00E6A754 /* UserStatView.swift in Sources */,
 				01DAE9A328DB6C4100F61034 /* ForgotPasswordView.swift in Sources */,
 				0116A8C628BC48390050780B /* UserCell.swift in Sources */,
@@ -420,6 +427,7 @@
 				0192C6602925B2C60078CFEC /* User.swift in Sources */,
 				014DF98728D3929800E6A754 /* ProfileActionButtonView.swift in Sources */,
 				010B6B79291445AE00A13DC8 /* AuthViewModel.swift in Sources */,
+				01E4255B292D858F00A9D0EA /* ProfileViewModel.swift in Sources */,
 				0116A8C828BC48500050780B /* UserListView.swift in Sources */,
 				0116A8E528C6934D0050780B /* NotificationCell.swift in Sources */,
 				01DAE99F28DB6C1400F61034 /* LoginView.swift in Sources */,

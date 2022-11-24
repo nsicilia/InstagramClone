@@ -15,5 +15,7 @@ struct User: Identifiable, Decodable{
     
     @DocumentID var id: String?
     
+    var isFollowed: Bool? = false
+    
     var isCurrentUser: Bool { return AuthViewModel.shared.userSession?.uid == id}
 }
