@@ -31,6 +31,7 @@
 		0192C66F2925BC180078CFEC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0192C66E2925BC180078CFEC /* FirebaseStorage */; };
 		0198C7EB28ECC0F500676189 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0198C7EA28ECC0F500676189 /* Kingfisher */; };
 		0198C7ED28ECD29300676189 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0198C7EC28ECD29200676189 /* GoogleService-Info.plist */; };
+		01C42090293D739A003FF2D5 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C4208F293D7399003FF2D5 /* UploadPostViewModel.swift */; };
 		01D2605428A08B710019004A /* InstagramCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D2605328A08B710019004A /* InstagramCloneApp.swift */; };
 		01D2605628A08B710019004A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D2605528A08B710019004A /* ContentView.swift */; };
 		01D2605828A08B750019004A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01D2605728A08B750019004A /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		0192C65D2925A7E10078CFEC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0192C65F2925B2C60078CFEC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0198C7EC28ECD29200676189 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01C4208F293D7399003FF2D5 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		01D2605028A08B710019004A /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D2605328A08B710019004A /* InstagramCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneApp.swift; sourceTree = "<group>"; };
 		01D2605528A08B710019004A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,10 +129,10 @@
 		01D2605228A08B710019004A /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				01D2606428A08C660019004A /* API */,
 				01D2605728A08B750019004A /* Assets.xcassets */,
 				0198C7EC28ECD29200676189 /* GoogleService-Info.plist */,
 				01D2605328A08B710019004A /* InstagramCloneApp.swift */,
+				01D2606428A08C660019004A /* API */,
 				01D2606728A08C6B0019004A /* Model */,
 				01D2605928A08B750019004A /* Preview Content */,
 				01D2606128A08C5B0019004A /* Utils */,
@@ -176,6 +178,7 @@
 				01D2607328A08E470019004A /* Authentication */,
 				01D2607228A08E3E0019004A /* Notifications */,
 				01D2607128A08E370019004A /* Feed */,
+				01C4208F293D7399003FF2D5 /* UploadPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				01D2607628A08F1B0019004A /* MainTabView.swift in Sources */,
 				01D2608028A090540019004A /* UploadPostView.swift in Sources */,
 				01DAE99D28DA341800F61034 /* ImagePicker.swift in Sources */,
+				01C42090293D739A003FF2D5 /* UploadPostViewModel.swift in Sources */,
 				0116A8E728C6AFEC0050780B /* ProfileHeaderView.swift in Sources */,
 				01D2607E28A090410019004A /* ProfileView.swift in Sources */,
 				01E4255D292D941700A9D0EA /* UserService.swift in Sources */,
@@ -561,7 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InstagramClone/Preview Content\"";
-				DEVELOPMENT_TEAM = P8YNAFUQPC;
+				DEVELOPMENT_TEAM = 2MWFTHNH2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -590,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"InstagramClone/Preview Content\"";
-				DEVELOPMENT_TEAM = P8YNAFUQPC;
+				DEVELOPMENT_TEAM = 2MWFTHNH2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
