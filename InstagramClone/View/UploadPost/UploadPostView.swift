@@ -62,31 +62,53 @@ struct UploadPostView: View {
                         .frame(width: 96, height: 96)
                         .clipped()
                     
-                    TextField("Enter a caption.", text: $captionText)
+                    // TextField("Enter a caption.", text: $captionText)
+                    TextArea(text: $captionText, placeholder: "Caption...")
+                        .frame(width: 200)
                         .padding(36)
-                        
-                        
+                    
+                    
                 }
                 .padding()
                 
-                Button {
-                    //todo
-                    if let image = selectedImage {
-                        viewModel.uploadPost(caption: captionText, image: image) { _ in
-                            captionText = ""
-                            postImage = nil
-                            tabIndex = 0
-                        }
+                //Cancel
+                HStack {
+                    Button {
+                        captionText = ""
+                        postImage = nil
+                        
+                    } label: {
+                        Text("Cancel")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 172, height: 50)
+                            .background(.red)
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
                     }
-                } label: {
-                    Text("Share")
-                        .font(.system(size: 16, weight: .semibold))
-                        .frame(width: 360, height: 50)
-                        .background(.blue)
-                        .cornerRadius(5)
-                        .foregroundColor(.white)
+                    .padding()
+                    
+                    //Share
+                    Button {
+                        if let image = selectedImage {
+                            viewModel.uploadPost(caption: captionText, image: image) { _ in
+                                captionText = ""
+                                postImage = nil
+                                tabIndex = 0
+                            }
+                        }
+                    } label: {
+                        Text("Share")
+                            .font(.system(size: 16, weight: .semibold))
+                            .frame(width: 172, height: 50)
+                            .background(.blue)
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                    
                 }
-                .padding()
+                
+                
                 
             }
             
