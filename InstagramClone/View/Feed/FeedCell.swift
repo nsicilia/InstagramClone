@@ -6,29 +6,33 @@
 //
 
 import SwiftUI
+import Firebase //just for preview
+import Kingfisher
 
 struct FeedCell: View {
+    let post: Post
+    
     var body: some View {
         //user info
         VStack(alignment: .leading) {
             HStack{
-                Image("jessica")
+                KFImage(URL(string: post.ownerImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 36, height: 36)
                     .clipped()
                     .cornerRadius(18)
-                Text("Jessica")
+                Text(post.ownerUsername)
                     .font(.system(size: 14, weight: .semibold))
             }
             .padding([.leading, .bottom],8)
         
         
         //post image
-            Image("jessica")
+            KFImage(URL(string: post.imageUrl))
                 .resizable()
                 .scaledToFill()
-                .frame(maxHeight: 440)
+                .frame(maxWidth: UIScreen.screenWidth, maxHeight: 400)
                 .clipped()
         //action buttons
             HStack(spacing: 16){
@@ -65,17 +69,17 @@ struct FeedCell: View {
             .foregroundColor(.black)
         
         //caption and like count
-            Text("3 likes")
+            Text("\(post.likes) likes")
                 .font(.system(size: 14, weight: .semibold))
                 .padding(.leading, 8)
                 .padding(.bottom, 2)
             
             HStack{
 
-                Text("Jessica ")
+                Text(post.ownerUsername)
                     .font(.system(size: 14, weight: .semibold))
                 +
-                Text("Lorem Ipsum has been a common industry's standard dummy text ever since the 1500s.")
+                Text(" \(post.caption)")
                     .font(.system(size: 15))
             }
             .padding(.horizontal, 8)
@@ -91,6 +95,6 @@ struct FeedCell: View {
 
 struct FeedCell_Previews: PreviewProvider {
     static var previews: some View {
-        FeedCell()
+        FeedCell(post: Post(ownerUid: "dd", ownerUsername: "jessica", caption: "Lorum Ipsum dolor", likes: 5, imageUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", timestamp: Timestamp(), ownerImageUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"))
     }
 }
