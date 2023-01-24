@@ -15,29 +15,21 @@ class SearchViewModel: ObservableObject{
         fetchUsers()
     }
     
-//      what auto-populated
-//    init(users: [User] = [User]()) {
-//        self.users = users
-//    }
-    
     
     func fetchUsers(){
         
         COLLECTION_USERS.getDocuments { snapshot, error in
-            if let error = error{
-                print("ERROR: SearchViewModel - \(error.localizedDescription)")
-                return
-            }
+            //handle error
+            if let error = error{print("ERROR: SearchViewModel - \(error.localizedDescription)"); return }
             
             guard let documents = snapshot?.documents else { return }
 //            documents.forEach { QueryDocumentSnapshot in
 //                guard let user = try? QueryDocumentSnapshot.data(as: User.self) else { return }
 //                self.users.append(user)
 //            }
+            //Shortform of the forEach
             self.users = documents.compactMap { try? $0.data(as: User.self) }
-
         }
-        
     }
     
     func filteredUsers(_ query: String) -> [User] {
