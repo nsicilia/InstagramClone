@@ -10,9 +10,12 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 
+
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+     
+   // var ham: FirebaseAuth
     
     static let shared = AuthViewModel()
     

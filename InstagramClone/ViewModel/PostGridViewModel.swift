@@ -34,6 +34,7 @@ class PostGridViewModel: ObservableObject{
         }
     }
     
+    
     func fetchExplorePosts(){
         // retrieve documents from COLLECTION_POSTS collection
         COLLECTION_POSTS.getDocuments { SnapshotData, error in
