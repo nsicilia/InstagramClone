@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import Foundation
 
 class CommentViewModel: ObservableObject{
     private let post: Post
@@ -38,6 +39,8 @@ class CommentViewModel: ObservableObject{
                 print("DEBUG: Error uploading comment \(error.localizedDescription)")
             }
             
+            NotificationsViewModel.uploadNotification(toUid: self.post.ownerUid, type: .comment, post: self.post)
+            
         }
         
     }
@@ -48,18 +51,20 @@ class CommentViewModel: ObservableObject{
         
         let query = COLLECTION_POSTS.document(postId).collection("post-comments").order(by: "timestamp", descending: true)
         
+        
+        
         query.addSnapshotListener { snapshot, _ in
-            
             guard let addDocs = snapshot?.documentChanges.filter({ $0.type == .added }) else {return}
-            self.comments.append(contentsOf: addDocs.compactMap({ try? $0.document.data(as: Comment.self) }))
+            
+           // self.comments.append(contentsOf: addDocs.compactMap({ try? $0.document.data(as: Comment.self) }) )
             
 //            Longer version of the code above
-//            snapshot?.documentChanges.forEach({ change in
-//                if change.type == .added {
-//                    guard let comment = try? change.document.data(as: Comment.self) else {return}
-//                    self.comments.append(comment)
-//                }
-//            })
+            snapshot?.documentChanges.forEach({ change in
+                if change.type == .added {
+                    guard let comment = try? change.document.data(as: Comment.self) else {return}
+                    self.comments.append(comment)
+                }
+            })
             
             
         }

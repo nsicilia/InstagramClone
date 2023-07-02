@@ -6,28 +6,31 @@
 //
 
 import SwiftUI
+import Kingfisher
+import Firebase
 
 struct NotificationCell: View {
     @State private var showPostImage = true
+    let notification: Notification
     
     var body: some View {
         HStack {
             //Image
-            Image("jessica")
+            KFImage(URL(string: notification.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 48, height: 48)
                 .clipShape(Circle())
             //Name + Notifiaction
-            Text("Jessica ")
+            Text(notification.username)
                 .font(.system(size: 14, weight: .semibold))
             +
-            Text("Like one of your posts.")
+            Text(notification.type.notificationMessage)
                 .font(.system(size: 15))
             
             Spacer()
             
-            if showPostImage {
+            if notification.type != .follow {
                 Image("jessica")
                     .resizable()
                     .scaledToFill()
@@ -52,7 +55,10 @@ struct NotificationCell: View {
 }
 
 struct NotificationCell_Previews: PreviewProvider {
+    
+    
+    
     static var previews: some View {
-        NotificationCell()
+        NotificationCell(notification: Notification(username: "", profileImageUrl: "", timestamp: Timestamp(), type: NotificationType(rawValue: 1) ?? .comment, uid: ""))
     }
 }

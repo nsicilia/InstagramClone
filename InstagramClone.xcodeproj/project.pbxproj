@@ -60,6 +60,8 @@
 		01DAE9A728DB77B100F61034 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DAE9A628DB77B100F61034 /* CustomSecureField.swift */; };
 		01E4255B292D858F00A9D0EA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4255A292D858E00A9D0EA /* ProfileViewModel.swift */; };
 		01E4255D292D941700A9D0EA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4255C292D941700A9D0EA /* UserService.swift */; };
+		01EDA04C2A06A73500A77861 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EDA04B2A06A73500A77861 /* Notification.swift */; };
+		01EDA04E2A06B0DE00A77861 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EDA04D2A06B0DE00A77861 /* NotificationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		01DAE9A628DB77B100F61034 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		01E4255A292D858E00A9D0EA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		01E4255C292D941700A9D0EA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		01EDA04B2A06A73500A77861 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		01EDA04D2A06B0DE00A77861 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +241,7 @@
 				0192C65F2925B2C60078CFEC /* User.swift */,
 				01818DB529707DDC008B4EB3 /* Post.swift */,
 				0149DAEB29B7BAE100633CAC /* Comment.swift */,
+				01EDA04B2A06A73500A77861 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 		01D2607228A08E3E0019004A /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				01EDA04D2A06B0DE00A77861 /* NotificationsViewModel.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				01D2607828A08F810019004A /* FeedView.swift in Sources */,
 				0149DAEE29B7BB3A00633CAC /* CommentViewModel.swift in Sources */,
 				0116A8C428BC3DCF0050780B /* PostGridView.swift in Sources */,
+				01EDA04E2A06B0DE00A77861 /* NotificationsViewModel.swift in Sources */,
 				01DAE9A128DB6C3300F61034 /* RegistrationView.swift in Sources */,
 				01DAE9A528DB77A200F61034 /* CustomTextField.swift in Sources */,
 				01473BFD291ED3C1004E0429 /* ImageUploader.swift in Sources */,
@@ -482,6 +489,7 @@
 				0116A8C828BC48500050780B /* UserListView.swift in Sources */,
 				0116A8E528C6934D0050780B /* NotificationCell.swift in Sources */,
 				01DAE99F28DB6C1400F61034 /* LoginView.swift in Sources */,
+				01EDA04C2A06A73500A77861 /* Notification.swift in Sources */,
 				0149DAEC29B7BAE100633CAC /* Comment.swift in Sources */,
 				0116A8CA28C2EB4C0050780B /* Extensions.swift in Sources */,
 				0192C65E2925A7E10078CFEC /* Constants.swift in Sources */,
